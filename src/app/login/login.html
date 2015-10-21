@@ -1,0 +1,59 @@
+<div class="container" style="width: 780px; margin: 10% auto 0 auto;">
+    <div class="row">
+        <div class="col-md-7">
+            <div class="signin-info">
+                <div class="logopanel">
+                    <h1>厦金所CRM</h1>
+                </div>
+                <h5><strong>Welcome to Bracket Bootstrap 3 Template!</strong></h5>
+                <ul>
+                    <li><i class="fa fa-arrow-circle-o-right mr5"></i> Fully Responsive Layout</li>
+                    <li><i class="fa fa-arrow-circle-o-right mr5"></i> HTML5/CSS3 Valid</li>
+                    <li><i class="fa fa-arrow-circle-o-right mr5"></i> Retina Ready</li>
+                    <li><i class="fa fa-arrow-circle-o-right mr5"></i> WYSIWYG CKEditor</li>
+                    <li><i class="fa fa-arrow-circle-o-right mr5"></i> and much more...</li>
+                </ul>
+                <div class="mb20"></div>
+                <strong>没有账号或忘记密码？请联系管理员！</strong>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <form class="form-signin" name="loginForm" novalidate>
+                <h3 class="form-signin-heading">登陆</h3>
+                <p>请使用您的账号登陆厦金所CRM</p>
+                <div class="form-group">
+                    <label for="username" class="sr-only">用户名</label>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="user-addon"><i class="glyphicon glyphicon-user" aria-hidden="true"></i></span>
+                        <input type="text" id="username" name="username" class="form-control" placeholder="用户名" required autofocus aria-describedby="user-addon" ng-blur="loginForm.username.focused=false" ng-focus="loginForm.username.focused=true" ng-model="login.username">
+                    </div>
+                    <p ng-show="(loginForm.username.$dirty || loginForm.submitted) && loginForm.username.$error && !loginForm.username.focused">
+                        <small ng-show="loginForm.username.$error.required">用户名是必须的。</small>
+                    </p>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="sr-only">密码</label>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="password-addon"><i class="glyphicon glyphicon-lock" aria-hidden="true"></i></span>
+                        <input type="password" id="password" name="password" class="form-control" placeholder="密码" required aria-describedby="password-addon" ng-blur="loginForm.password.focused=false" ng-focus="loginForm.password.focused=true" ng-model="login.password">
+                    </div>
+                    <p ng-show="(loginForm.password.$dirty || loginForm.submitted) && loginForm.password.$error && !loginForm.password.focused">
+                        <small ng-show="loginForm.password.$error.required">密码是必须的。</small>
+                    </p>
+                </div>
+                <!--<div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>-->
+                <button class="btn btn-lg btn-primary btn-block" type="button" ng-click="login()">登陆</button>
+                <div class="alert alert-{{alerts.type}}" role="alert" ng-show="alerts.msgs.length>0" style="margin-top: 30px">
+                    <ul>
+                        <ol ng-repeat="msg in alerts.msgs" ng-bind="msg"></ol>
+                    </ul>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- /container -->

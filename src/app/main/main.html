@@ -1,0 +1,33 @@
+<div class="container-fluid">
+
+  <div ng-include="'app/components/navbar/navbar.html'"></div>
+
+  <div class="row">
+    <div class="sidebar">
+      <div>
+        <a href="#" class="thumbnail">
+          <img src="assets/images/pic.gif" alt="头像">
+          <p class="text-center user" ng-bind="user.name"></p>
+        </a>
+      </div>
+      <ul class="nav nav-sidebar">
+        <li ng-repeat="nav in myNavs" ui-sref-active="active" >
+          <a ui-sref="{{nav}}">
+            <span class="glyphicon glyphicon-{{navs[nav].icon}}" aria-hidden="true"></span><strong ng-bind="navs[nav].name"></strong>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="main">
+      <div class="alert alert-{{alerts.type}}" role="alert" ng-show="alerts.msgs.length>0">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close" ng-click="alerts.msgs.length=0"><span aria-hidden="true">&times;</span></button>
+        <ul>
+          <ol ng-repeat="msg in alerts.msgs" ng-bind="msg"></ol>
+        </ul>
+      </div>
+
+      <div ui-view></div>
+    </div>
+  </div>
+
+</div>
